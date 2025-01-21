@@ -44,6 +44,14 @@ public class Operators {
         System.out.printf("num1 : %d\n", num1++);
         System.out.printf("num1 : %d\n", ++num1);   // pre-fix : 변수의 값을 먼저 증가한 뒤 같은 줄에 있는 명령을 실행
 
+        // 2. 대입 연산자 : =, +=, -=, *=, /=, %=
+        num3 += num1;  // num3 = num3 + num1;
+        num3 -= num1;  // num3 = num3 - num1;
+        num3 *= num1;  // num3 = num3 * num1;
+        num3 /= num1;  // num3 = num3 / num1;
+        num3 %= num1;  // num3 = num3 % num1;
+
+
         // 형변환
         short shNum = (short)num1;  // 명시적 형변환, over-flow 가 발생할 수 있고, 그 책임은 개발자에게 있다.
         num1 = shNum;   // 묵시적 형변환
@@ -66,9 +74,31 @@ public class Operators {
 
         // 4. 논리 연산자 : &&(AND), ||(OR), !(NOT)
         bOk = num1 > num2 && num1 == num2;
+        System.out.println("b0k : " + bOk);
 
-        // 5. 비트 연산자
+        bOk = num1 < num2 || num1 != num2;
+        System.out.println( "b0k : " + bOk);
 
-        // 6. 기타 연산자
+        // 5. 비트 연산자 : &(and), |(or), ~(not), ^(xor), <<, >>(shift)
+        num1 = 5;
+        num2 = 3;
+        num3 = num1 & num2;
+        System.out.println("num3 : " + num3);
+        num3 = num1 | num2;
+        System.out.println("num3 : " + num3);
+        num3 = ~num1;
+        System.out.println("num3 : " + num3);
+        // ^(xor) : 두개의 비트가 같으면 0, 다르면 1로 세팅된다.
+        num3 = num1 ^ num2;
+        System.out.println("num3 : " + num3);
+
+        // shift
+        num3 = num1 << 1;  // num1의 비트를 왼쪽으로 한 칸 이동시킴
+        System.out.println("num3 : " + num3);
+        num3 = num1 >> 1;  // num1의 비트를 왼쪽으로 한 칸 이동시킴
+        System.out.println("num3 : " + num3);
+
+        // 6. 기타 연산자 : +, (조건식) ? 참일때 값: 거짓일때 값 ===> 삼항연산자
+        num3 = (num1==5) ? 1 : 0;
     }
 }
